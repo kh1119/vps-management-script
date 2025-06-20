@@ -13,20 +13,7 @@ set -e  # Thoát ngay khi có lỗi
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/config.sh"
 
-# Màu sắc cho output
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-BLUE='\033[0;34m'
-PURPLE='\033[0;35m'
-CYAN='\033[0;36m'
-NC='\033[0m' # No Color
-
-# Biến toàn cục
-SILENT_MODE=false
-CURRENT_USER=$(whoami)
-
-# Hàm hiển thị thông báo
+# Extend log functions to include timestamp logging
 log_info() {
     echo -e "${BLUE}[INFO]${NC} $1"
     log_with_timestamp "[INFO] $1"
@@ -51,6 +38,10 @@ log_step() {
     echo -e "${PURPLE}[STEP]${NC} $1"
     log_with_timestamp "[STEP] $1"
 }
+
+# Biến toàn cục
+SILENT_MODE=false
+CURRENT_USER=$(whoami)
 
 # Hàm xử lý tham số dòng lệnh
 parse_arguments() {

@@ -8,7 +8,8 @@
 set -e
 
 # Import cấu hình
-source "$(dirname "$(dirname "$(dirname "${BASH_SOURCE[0]}")")")/config.sh"
+SCRIPT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../../" && pwd)"
+source "$SCRIPT_ROOT/config.sh"
 
 log_info "=== BƯỚC 6: CÀI ĐẶT TOOLS ==="
 

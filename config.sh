@@ -5,6 +5,38 @@
 # Chứa các thiết lập mặc định và cấu hình cho chế độ silent
 # =============================================================================
 
+# Màu sắc cho output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+# Logging functions
+log_info() {
+    echo -e "${GREEN}[INFO]${NC} $1" >&2
+}
+
+log_warning() {
+    echo -e "${YELLOW}[WARNING]${NC} $1" >&2
+}
+
+log_error() {
+    echo -e "${RED}[ERROR]${NC} $1" >&2
+}
+
+log_success() {
+    echo -e "${GREEN}[SUCCESS]${NC} $1" >&2
+}
+
+log_debug() {
+    if [[ "${DEBUG:-false}" == "true" ]]; then
+        echo -e "${PURPLE}[DEBUG]${NC} $1" >&2
+    fi
+}
+
 # Cấu hình cơ bản
 SCRIPT_NAME="VPS Management Script"
 SCRIPT_VERSION="1.0"
@@ -157,3 +189,28 @@ export SSL_COUNTRY SSL_STATE SSL_CITY SSL_ORG SSL_EMAIL
 export BACKUP_RETENTION_DAYS BACKUP_COMPRESSION
 export SECURE_HEADERS_ENABLED RATE_LIMITING_ENABLED FAIL2BAN_ENABLED
 export SYSTEM_PACKAGES PPAS
+
+# Helper function để import config.sh từ bất kỳ đâu
+load_config() {
+    local script_path="$1"
+    local config_path=""
+    
+    # Nếu được gọi từ module (3 levels deep)
+    if [[ "$script_path" =~ modules/ubuntu/[0-9]+/ ]]; then
+        config_path="$(dirname "$(dirname "$(dirname "$script_path")")")/config.sh"
+    # Nếu được gọi từ root directory
+    else
+        config_path="$(dirname "$script_path")/config.sh"
+    fi
+    
+    if [[ -f "$config_path" ]]; then
+        source "$config_path"
+        log_debug "Config loaded from: $config_path"
+    else
+        echo "ERROR: Cannot find config.sh at $config_path" >&2
+        exit 1
+    fi
+}
+
+# Đánh dấu config đã được load
+export CONFIG_LOADED="true"

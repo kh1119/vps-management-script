@@ -8,7 +8,8 @@
 set -e
 
 # Import cấu hình
-source "$(dirname "$(dirname "$(dirname "${BASH_SOURCE[0]}")")")/config.sh"
+SCRIPT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../../" && pwd)"
+source "$SCRIPT_ROOT/config.sh"
 
 # Màu sắc cho output
 RED='\033[0;31m'

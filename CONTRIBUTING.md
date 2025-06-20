@@ -112,7 +112,8 @@ Trước khi báo cáo lỗi, vui lòng:
 set -e
 
 # Import configuration
-source "$(dirname "$(dirname "$(dirname "${BASH_SOURCE[0]}")")")/config.sh"
+SCRIPT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../../" && pwd)"
+source "$SCRIPT_ROOT/config.sh"
 
 # Functions
 function_name() {

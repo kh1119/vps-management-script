@@ -8,8 +8,9 @@
 set -e
 
 # Import cấu hình nếu có
-if [[ -f "$(dirname "${BASH_SOURCE[0]}")/config.sh" ]]; then
-    source "$(dirname "${BASH_SOURCE[0]}")/config.sh"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [[ -f "$SCRIPT_DIR/config.sh" ]]; then
+    source "$SCRIPT_DIR/config.sh"
 fi
 
 # Màu sắc
