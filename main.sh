@@ -68,7 +68,7 @@ check_os() {
 # Hàm tải xuống script cài đặt
 download_installer() {
     local installer_name="install_ubt_24.sh"
-    local download_url="https://raw.githubusercontent.com/kth/vps-management-script/main/$installer_name"
+    local download_url="https://raw.githubusercontent.com/kh1119/vps-management-script/main/$installer_name"
     
     log_info "Bắt đầu tải bộ cài đặt cho Ubuntu 24.04..."
     

@@ -9,7 +9,7 @@ set -e
 
 # Cấu hình
 REPO_NAME="vps-management-script"
-GITHUB_USERNAME="kth"  # Thay bằng username thực của bạn
+GITHUB_USERNAME="kh1119"  # Thay bằng username thực của bạn
 PROJECT_DIR="/Users/kth/Documents/code/Scripts/my-super-script"
 
 echo "🚀 Chuẩn bị upload VPS Management Script lên GitHub..."

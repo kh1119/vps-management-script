@@ -37,16 +37,32 @@ Script tự động hóa quản lý VPS với LEMP Stack (Linux, Nginx, MariaDB,
 
 ## 🛠️ Cài đặt nhanh
 
+### ⚡ Nếu gặp lỗi 404
+
+**Nếu lệnh curl trả về lỗi 404, có nghĩa là repository chưa được setup đúng cách.**
+
+**Giải pháp nhanh:**
+```bash
+# 1. Clone repository về local
+git clone https://github.com/YOUR_USERNAME/vps-management-script.git
+cd vps-management-script
+chmod +x *.sh modules/ubuntu/24/*.sh
+sudo ./install_ubt_24.sh
+
+# 2. Hoặc chạy script debug
+./debug_github.sh
+```
+
 ### Phương pháp 1: Script mồi (Khuyến nghị)
 ```bash
 # Tải và chạy script mồi
-curl -sSL https://raw.githubusercontent.com/kth/vps-management-script/main/main.sh | sudo bash
+curl -sSL https://raw.githubusercontent.com/kh1119/vps-management-script/main/main.sh | sudo bash
 ```
 
 ### Phương pháp 2: Clone repository
 ```bash
 # Clone project
-git clone https://github.com/kth/vps-management-script.git
+git clone https://github.com/kh1119/vps-management-script.git
 cd vps-management-script
 
 # Cấp quyền thực thi
@@ -213,7 +229,7 @@ sudo systemctl status nginx mariadb php8.3-fpm redis-server
 ## 📞 Hỗ trợ
 
 ### Báo lỗi
-- **GitHub Issues**: [Tạo issue mới](https://github.com/kth/vps-management-script/issues)
+- **GitHub Issues**: [Tạo issue mới](https://github.com/kh1119/vps-management-script/issues)
 - **Email**: support@yourdomain.com
 
 ### FAQ
