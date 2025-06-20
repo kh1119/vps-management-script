@@ -218,7 +218,7 @@ cat > /root/backup_redis.sh << EOF
 #!/bin/bash
 
 # Redis backup script
-BACKUP_DIR="/root/my-super-script/backups/redis"
+BACKUP_DIR="/root/vps-management-script/backups/redis"
 DATE=\$(date +%Y%m%d_%H%M%S)
 RETENTION_DAYS=7
 

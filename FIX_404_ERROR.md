@@ -31,7 +31,7 @@ bash: line 1: 404:: command not found
 ### Cách 2: Upload script bằng tool mới
 
 ```bash
-cd /Users/kth/Documents/code/Scripts/my-super-script
+cd /Users/kth/Documents/code/Scripts/vps-management-script
 
 # Chạy script upload mới (sẽ hỏi username thực)
 chmod +x github_upload_fixed.sh
@@ -50,7 +50,7 @@ chmod +x github_upload_fixed.sh
 
 2. **Upload files:**
    - Click "uploading an existing file" 
-   - Drag & drop tất cả files từ `/Users/kth/Documents/code/Scripts/my-super-script/`
+   - Drag & drop tất cả files từ `/Users/kth/Documents/code/Scripts/vps-management-script/`
    - Commit changes
 
 ### Cách 4: Clone và chạy offline
@@ -104,7 +104,7 @@ curl -I https://raw.githubusercontent.com/YOUR_USERNAME/vps-management-script/ma
 
 **Hoặc chạy offline:**
 ```bash
-cd /Users/kth/Documents/code/Scripts/my-super-script
+cd /Users/kth/Documents/code/Scripts/vps-management-script
 chmod +x main_offline.sh
 sudo ./main_offline.sh
 ```

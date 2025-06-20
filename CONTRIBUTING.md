@@ -31,7 +31,7 @@ Trước khi báo cáo lỗi, vui lòng:
 - Health check output: [Paste output here]
 
 ## 📋 Log files
-[Paste relevant log content from /root/my-super-script/logs/]
+[Paste relevant log content from /root/vps-management-script/logs/]
 
 ## 🎯 Kết quả mong đợi
 [Mô tả những gì bạn mong đợi xảy ra]

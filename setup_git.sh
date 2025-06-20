@@ -7,7 +7,7 @@
 
 set -e
 
-PROJECT_DIR="/Users/kth/Documents/code/Scripts/my-super-script"
+PROJECT_DIR="/Users/kth/Documents/code/Scripts/vps-management-script"
 
 echo "🔧 Chuẩn bị Git repository cho VPS Management Script..."
 

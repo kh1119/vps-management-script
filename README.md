@@ -131,7 +131,7 @@ redis-cli-auth
 ## 🗂️ Cấu trúc thư mục
 
 ```
-/root/my-super-script/
+/root/vps-management-script/
 ├── main.sh                     # Script mồi
 ├── install_ubt_24.sh           # Script cài đặt chính
 ├── config.sh                   # File cấu hình
@@ -185,7 +185,7 @@ tar -czf backup.tar.gz /var/www/domain.com
 ### Kiểm tra logs
 ```bash
 # Script logs
-tail -f /root/my-super-script/logs/script.log
+tail -f /root/vps-management-script/logs/script.log
 
 # Nginx logs
 tail -f /var/log/nginx/error.log

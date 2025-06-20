@@ -9,7 +9,7 @@ chmod +x "$0"
 
 set -e
 
-PROJECT_DIR="/Users/kth/Documents/code/Scripts/my-super-script"
+PROJECT_DIR="/Users/kth/Documents/code/Scripts/vps-management-script"
 cd "$PROJECT_DIR"
 
 echo "🚀 Chuẩn bị VPS Management Script v1.0 cho release..."

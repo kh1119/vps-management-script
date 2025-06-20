@@ -29,7 +29,7 @@ if [[ -z "$GITHUB_USERNAME" ]]; then
 fi
 
 REPO_NAME="vps-management-script"
-PROJECT_DIR="/Users/kth/Documents/code/Scripts/my-super-script"
+PROJECT_DIR="/Users/kth/Documents/code/Scripts/vps-management-script"
 
 echo "✅ GitHub username: $GITHUB_USERNAME"
 echo "✅ Repository name: $REPO_NAME"

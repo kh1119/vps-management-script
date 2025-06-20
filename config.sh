@@ -11,7 +11,7 @@ SCRIPT_VERSION="1.0"
 SCRIPT_AUTHOR="Your Name"
 
 # Thư mục làm việc
-WORK_DIR="/root/my-super-script"
+WORK_DIR="/root/vps-management-script"
 LOG_DIR="$WORK_DIR/logs"
 BACKUP_DIR="$WORK_DIR/backups"
 TEMPLATES_DIR="$WORK_DIR/templates"

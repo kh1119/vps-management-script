@@ -329,8 +329,8 @@ check_backup() {
     fi
     
     # Backup directory
-    if [[ -d "/root/my-super-script/backups" ]]; then
-        local backup_size=$(du -sh /root/my-super-script/backups 2>/dev/null | cut -f1)
+    if [[ -d "/root/vps-management-script/backups" ]]; then
+        local backup_size=$(du -sh /root/vps-management-script/backups 2>/dev/null | cut -f1)
         log_check "INFO" "Backup directory size: $backup_size"
     else
         log_check "WARN" "Backup directory missing"
@@ -427,7 +427,7 @@ show_summary() {
     
     echo ""
     echo "🕒 Thời gian kiểm tra: $(date)"
-    echo "💾 Log chi tiết: /root/my-super-script/logs/health_check.log"
+    echo "💾 Log chi tiết: /root/vps-management-script/logs/health_check.log"
 }
 
 # Hàm chính
@@ -453,4 +453,4 @@ main() {
 }
 
 # Chạy health check
-main "$@" | tee -a "/root/my-super-script/logs/health_check.log" 2>/dev/null || main "$@"
+main "$@" | tee -a "/root/vps-management-script/logs/health_check.log" 2>/dev/null || main "$@"

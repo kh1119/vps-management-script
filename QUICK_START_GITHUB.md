@@ -6,7 +6,7 @@ Hướng dẫn nhanh để upload VPS Management Script lên GitHub của bạn.
 
 ```bash
 # 1. Chuẩn bị project
-cd /Users/kth/Documents/code/Scripts/my-super-script
+cd /Users/kth/Documents/code/Scripts/vps-management-script
 chmod +x prepare_release.sh
 ./prepare_release.sh
 
@@ -33,7 +33,7 @@ sed -i '' 's/GITHUB_USERNAME="kth"/GITHUB_USERNAME="YOUR_ACTUAL_USERNAME"/' uplo
 ### Bước 2: Chuẩn bị Local Repository
 
 ```bash
-cd /Users/kth/Documents/code/Scripts/my-super-script
+cd /Users/kth/Documents/code/Scripts/vps-management-script
 
 # Chuẩn bị tất cả files
 ./prepare_release.sh

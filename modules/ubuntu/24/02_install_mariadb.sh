@@ -151,7 +151,7 @@ cat > /root/backup_databases.sh << 'EOF'
 # Script backup tất cả databases
 # Sử dụng: ./backup_databases.sh
 
-BACKUP_DIR="/root/my-super-script/backups/mysql"
+BACKUP_DIR="/root/vps-management-script/backups/mysql"
 DATE=$(date +%Y%m%d_%H%M%S)
 RETENTION_DAYS=7
 

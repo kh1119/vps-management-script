@@ -7,7 +7,7 @@ chmod +x "$0"
 # Cấp quyền thực thi cho tất cả scripts (fix_permissions.sh)
 # =============================================================================
 
-cd /Users/kth/Documents/code/Scripts/my-super-script
+cd /Users/kth/Documents/code/Scripts/vps-management-script
 
 echo "🔧 Cấp quyền thực thi cho tất cả scripts..."
 
