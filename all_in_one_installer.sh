@@ -105,8 +105,14 @@ install_basic_packages() {
     apt install -y "${packages[@]}"
     
     # Thêm PPAs
-    add-apt-repository -y ppa:ondrej/php
-    add-apt-repository -y ppa:ondrej/nginx-mainline
+    log_info "Thêm PPA Ondřej Surý cho PHP..."
+    if ! add-apt-repository -y ppa:ondrej/php; then
+        log_warning "Không thể thêm PPA ondrej/php - sử dụng repo mặc định"
+    fi
+    
+    # Ubuntu 24.04 đã có nginx mới, không cần PPA nginx
+    log_info "Sử dụng Nginx từ repo Ubuntu chính thức"
+    
     apt update
     
     log_success "Packages cơ bản đã được cài đặt"

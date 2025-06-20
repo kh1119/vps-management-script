@@ -27,8 +27,15 @@ apt install -y "${SYSTEM_PACKAGES[@]}"
 # Thêm các PPA cần thiết
 log_info "Thêm PPAs..."
 for ppa in "${PPAS[@]}"; do
+    # Skip empty PPAs or commented ones
+    if [[ -z "$ppa" || "$ppa" =~ ^[[:space:]]*# ]]; then
+        continue
+    fi
+    
     log_info "Thêm $ppa..."
-    add-apt-repository -y "$ppa"
+    if ! add-apt-repository -y "$ppa"; then
+        log_warning "Không thể thêm PPA: $ppa - tiếp tục với repo mặc định"
+    fi
 done
 
 # Cập nhật lại sau khi thêm PPA

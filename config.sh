@@ -144,10 +144,10 @@ SYSTEM_PACKAGES=(
     "fail2ban"
 )
 
-# PPAs cần thêm
+# PPAs cần thêm (có thể để trống nếu không cần)
 PPAS=(
     "ppa:ondrej/php"
-    "ppa:ondrej/nginx-mainline"
+    # "ppa:ondrej/nginx"  # Ubuntu 24.04 đã có nginx mới, comment out để dùng repo mặc định
 )
 
 # Hàm tạo mật khẩu ngẫu nhiên
