@@ -12,6 +12,8 @@ SCRIPT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../../" && pwd)"
 source "$SCRIPT_ROOT/config.sh"
 
 log_info "=== BƯỚC 2: CÀI ĐẶT NGINX ==="
+# Tạo thư mục 
+mkdir -p "/home/__all/public_html" "/home/__all/logs" "/home/__all/private_html"
 
 # Cài đặt Nginx
 log_info "Cài đặt Nginx..."
