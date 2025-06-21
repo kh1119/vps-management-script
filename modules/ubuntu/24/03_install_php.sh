@@ -65,9 +65,9 @@ session.use_strict_mode = 1
 
 ; Security
 expose_php = Off
-allow_url_fopen = Off
+allow_url_fopen = On
 allow_url_include = Off
-disable_functions = exec,passthru,shell_exec,system,proc_open,popen,curl_exec,curl_multi_exec,parse_ini_file,show_source
+disable_functions = exec,passthru,shell_exec,system,proc_open,popen,parse_ini_file,show_source
 
 ; Date
 date.timezone = Asia/Ho_Chi_Minh

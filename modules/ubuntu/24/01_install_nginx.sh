@@ -122,7 +122,7 @@ server {
     listen 80 default_server;
     listen [::]:80 default_server;
     
-    root /var/www/html;
+    root /home/__all/public_html;
     index index.php index.html index.htm index.nginx-debian.html;
     
     server_name _;
@@ -176,7 +176,7 @@ EOF
 # Tạo trang welcome
 log_info "Tạo trang welcome..."
 
-cat > /var/www/html/index.html << 'EOF'
+cat > /home/__all/public_html/index.html << 'EOF'
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -276,7 +276,7 @@ cat > /var/www/html/index.html << 'EOF'
 EOF
 
 # Tạo file PHP info
-cat > /var/www/html/info.php << 'EOF'
+cat > /home/__all/public_html/info.php << 'EOF'
 <?php
 // Trang thông tin PHP - CHỈ dùng để test
 // Hãy xóa file này sau khi kiểm tra xong
@@ -291,8 +291,8 @@ phpinfo();
 EOF
 
 # Set quyền cho web directory
-chown -R www-data:www-data /var/www/html
-chmod -R 755 /var/www/html
+chown -R www-data:www-data /home/__all/public_html
+chmod -R 755 /home/__all/public_html
 
 # Test cấu hình Nginx
 log_info "Kiểm tra cấu hình Nginx..."
@@ -320,7 +320,7 @@ NGINX_VERSION=$(nginx -v 2>&1 | cut -d' ' -f3)
 NGINX_CONFIG_PATH=/etc/nginx/nginx.conf
 NGINX_SITES_PATH=/etc/nginx/sites-available
 NGINX_LOG_PATH=/var/log/nginx
-WEB_ROOT=/var/www/html
+WEB_ROOT=/home/__all/public_html
 
 EOF
 

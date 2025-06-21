@@ -7,6 +7,13 @@ và dự án tuân thủ [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ## [Unreleased]
 
+### Fixed
+- 🔧 **PHP CURL Error**: Fixed `curl_exec()` function disabled in PHP configuration
+  - Removed `curl_exec` and `curl_multi_exec` from disable_functions
+  - Enabled `allow_url_fopen` for HTTP operations  
+  - Created `fix_php_curl.sh` script for existing installations
+  - Balanced security vs functionality in PHP config
+
 ### Planned
 - Hỗ trợ Ubuntu 22.04
 - Cài đặt PostgreSQL option
