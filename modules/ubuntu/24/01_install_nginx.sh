@@ -143,15 +143,35 @@ server {
     limit_req zone=general burst=20 nodelay;
     
     location / {
-        try_files $uri $uri/ =404;
+        try_files $uri $uri/ /index.php?$query_string;
     }
     
+    # WordPress/CMS specific rules
+    location ~* ^.+\.(ogg|ogv|svg|svgz|eot|otf|woff|mp4|ttf|css|rss|atom|js|jpg|jpeg|gif|png|ico|zip|tgz|gz|rar|bz2|doc|xls|exe|ppt|tar|mid|midi|wav|bmp|rtf)$ {
+        access_log off;
+        log_not_found off;
+        expires max;
+        add_header Cache-Control "public, immutable";
+    }
+
     # PHP handling
     location ~ \.php$ {
         include snippets/fastcgi-php.conf;
         fastcgi_pass unix:/var/run/php/php8.3-fpm.sock;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         include fastcgi_params;
+        
+        # Enhanced PHP security and performance
+        fastcgi_hide_header X-Powered-By;
+        fastcgi_param SERVER_NAME $host;
+        fastcgi_param HTTPS $https if_not_empty;
+        fastcgi_read_timeout 300;
+        fastcgi_connect_timeout 300;
+        fastcgi_send_timeout 300;
+        fastcgi_buffer_size 128k;
+        fastcgi_buffers 256 16k;
+        fastcgi_busy_buffers_size 256k;
+        fastcgi_temp_file_write_size 256k;
     }
     
     # Deny access to .htaccess files
@@ -293,7 +313,7 @@ phpinfo();
 EOF
 
 # Set quyền cho web directory
-chown -R www-data:www-data /home/__all/public_html
+chown -R www-data:www-data /home
 chmod -R 755 /home/__all/public_html
 
 # Test cấu hình Nginx
